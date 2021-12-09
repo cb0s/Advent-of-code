@@ -1,0 +1,39 @@
+def solve_a(input_values: list) -> None:
+    ...
+
+
+def solve_b(input_values: list) -> None:
+    ...
+
+
+def get_contents(path: str) -> list[str]:
+    with open(path, 'r') as f:
+        contents = f.read()
+        lines = contents.splitlines(keepends=False)
+        return lines
+
+
+def log_a(*args, **kwargs):
+    print("[A]", *args, **kwargs)
+
+
+def log_b(*args, **kwargs):
+    print("[B]", *args, **kwargs)
+
+
+def main():
+    input_file = "input.txt"
+    input_values = get_contents(input_file)
+
+    solve_a(input_values)
+    print() # Easier to distinguish the outputs
+    solve_b(input_values)
+
+    print(f"#### Finished for day {DAY} ####")
+
+
+DAY = -1    # Day of calendar
+
+
+if __name__ == '__main__':
+    main()
